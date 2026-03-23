@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* ===== Garima Group Custom Theme ===== */
+@theme {
+  --color-heritage-red: #a71515;
+  --color-heritage-red-dark: #8b1010;
+  --color-heritage-red-light: #c94545;
+  --color-academic-black: #1c1b1b;
+  --color-soft-grey: #f5f5f5;
+  --color-warm-neutral: #e7c6cc;
+  --color-heritage-gold: #c9a227;
+  --color-heritage-gold-dark: #a8861e;
+  --color-heritage-gold-light: #d4b94a;
+
+  --font-heading: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-body: var(--font-poppins), "Poppins", sans-serif;
+}
+
+/* ===== Base Styles ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-academic-black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+
+  ::selection {
+    background: var(--color-heritage-red);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-soft-grey);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-heritage-red);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-heritage-red-dark);
+  }
+}
+
+/* ===== Custom Animations ===== */
+@layer utilities {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgba(167, 21, 21, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgba(167, 21, 21, 0);
+    }
+  }
+
+  @keyframes scroll-wheel {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+
+  @keyframes bounce-down {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-8px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-4px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 2s infinite;
+  }
+
+  .animate-scroll-wheel {
+    animation: scroll-wheel 1.5s ease-in-out infinite;
+  }
+
+  .animate-bounce-down {
+    animation: bounce-down 2s ease-in-out infinite;
+  }
+
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-450 {
+    animation-delay: 450ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a71515, #c9a227);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
